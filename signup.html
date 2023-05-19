@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo">
+            </a>
+        </div>
+    </header>
+
+    <div class="nav-wrap">
+        <nav>
+            <ul class="clearfix gnb">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="notice.html">게시판</a>
+                    <ul class="gnb-dropdown">
+                        <li><a href="notice.html">공지사항</a></li>
+                        <li><a href="free.html">자유게시판</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="signup">
+        <form name="frm" action="index.html" method="get">
+            <legend><b>회원가입</b></legend>
+            <label for="id">ID</label><br>
+            <input id="id" name="userid" placeholder="아이디를 입력하세요" value=""><br>
+            <label for="pw">비밀번호</label><br>
+            <input id="pw" type="password" name="password" placeholder="비밀번호를 입력하세요"><br>
+            <label for="chkpw">비밀번호 확인</label><br>
+            <input id="chkpw" type="password" name="chkpw" placeholder="비밀번호 확인을 입력하세요"><br>
+            <label for="name">이름</label><br>
+            <input id="name" name="name" placeholder="이름을 입력하세요"><br>
+            <output name="result"></output>
+            <input type="submit" id="btn" value="가입하기" >
+        </form>
+    </main>
+        
+    <footer>
+        <p>copyright &copy; TJ academy</p>
+        <h2>여행의 완성을 위한 경험</h2>
+        <p>
+            (주) 블루에어 : 도도 외 1명 &nbsp;
+            주소 : 서울특별시 구로구 디지털로 306 &nbsp; 전화 : 0000-0000 / 02-1111-1111 &nbsp; 
+            사업자등록번호 : 222-22-22222 &nbsp; 통신판매업신고 : 구로 제 33-3333 &nbsp; 개인정보보호책임자 : 도도 블루에어 부사장 &nbsp;
+            MY품질인증 자세히보기&nbsp; 
+            MYISMS 자세히 보기&nbsp; 
+            블루에어 항공사 첫 소비자중심경영 MYCCM 인증 획득&nbsp; 
+            블루에어-마이스카이트랙스-선정-5성-항공사&nbsp; 
+        </p>
+    </footer>
+
+</body>
+</html>
