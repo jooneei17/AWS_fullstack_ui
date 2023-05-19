@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* body {margin: 0;}
+    .wrapper, .footer {text-align: center; background-color: white; padding:20px;}
+    .container {min-height: 800px; width: 960px; padding: 30px; margin: 0 auto; }
+    .section {margin: 0; width: 600px; float: left; border: 1px solid}
+    .aside {margin: 0; width: 192px; float: right; border: 1px solid}
+    .nav {text-align: left;}
+    .nav li {display: inline-block; margin-right: 30px;}
+    .nav li a {color: #000; text-decoration: none;}
+    .nav li a:hover {color: blue;}
+    body div img {width: 600px; display:block; float: left;}
+    .btn {width: 250px; height: 100px; font-size: 20px; display: block; float: left; }
+    .signlink {display: block; float: right }
+    .card {width: 430px; padding: 20px; float: left; } 
+    .card img {width: 170px; height: 170px; transition: all .2s;}
+    .card a {color: #222; text-decoration: none;}
+    .card a > * {float: left;}
+    .card a > div:first-child {overflow: hidden;}
+    .card a > div:last-child {width: 260px;}
+    .card a > div > p {height: 42px; overflow-y: hidden;}
+    .card a > div > h3, .card > a > div h4 {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    .card h3 {color: #00cc00;}
+    .card a:hover img {transform: scale(1.03);}
+    .card a > div:last-child:hover h4:hover {text-decoration: underline;}
+    .nav .home {
+      display: block; float: left;
+      background-image: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png);
+      width: 40px; height: 60px; 
+      background-position: -12px 131px;
+    }
+    .nav .notice {
+      display: block;
+      float: left;
+      background-image: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png);
+      width:81px; height: 60px; 
+      background-position: -215px 131px;
+    }
+    body div .header div img {width: 60px;}
+    */
+  
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+    // $(function(){
+    //     $(".board").hover(function(){
+    //         $(".drop1").show();
+    //         $(".drop2").show();
+    //     }, function(){
+    //         $(".drop1").hide();
+    //         $(".drop2").hide();
+    //     })
+    // })
+
+        $(document).ready(function() {
+            $('.sliders').bxSlider({
+            pager: false,
+            controls : false,
+            auto: true
+          });
+        })
+</script>
+<!-- <script src="common.js"></script> -->
+
+
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="header">
+            <div class="sliders">
+                <img src="https://cdn.pixabay.com/photo/2018/06/27/17/48/fantasy-3502188_960_720.jpg">
+                <img src="https://cdn.pixabay.com/photo/2016/01/09/18/27/camera-1130731__340.jpg">
+                <img src="https://cdn.pixabay.com/photo/2016/07/30/00/03/winding-road-1556177__340.jpg">
+                <img src="https://cdn.pixabay.com/photo/2014/08/27/18/24/girl-429380__340.jpg">
+            </div>
+            <hr>
+            <div class="nav">
+                <a class= "home" href="../mypage/index.html" ></a>
+                <a class= "board "></a>
+            </div>
+            <div class="drop-wrap">
+                
+                <div class="drop"><a href="../mypage/notice.html"></a></div>
+                <!-- <a class="drop"></a> -->
+            </div>
+            <hr>
+        </div>
+
+        <div class="container">
+            <div class="section img">
+                <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_960_720.jpg">
+            </div>
+            <div class="aside">
+                <div>
+                    <button class="btn">로그인</button>
+                </div>
+                <div class="link">
+                    <a href="../mypage/signup.html">회원가입</a>
+                    <a href="">ID/PW 찾기</a>
+                </div>        
+            </div>
+
+            <!-- <div class="section"> -->
+                <div class="card">
+                    <a href="">
+                    <div>
+                        <img src="https://cdn.pixabay.com/photo/2020/04/02/22/09/santorini-4996846_960_720.jpg">
+                    </div>
+                    <div>
+                        <h3>그리스</h3>
+                        <h4>그리스로 놀러가요</h4>
+                        <p> 산토리니는 집은 흰색과 파란색으로 되어 있어요</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">
+                    <div>
+                        <img src="https://cdn.pixabay.com/photo/2022/11/13/13/57/northern-lights-7589302_960_720.jpg">
+                    </div>
+                    <div>
+                        <h3>캐나다</h3>
+                        <h4>캐나다로 놀러가요</h4>
+                        <p>캐나다에서 극 지방에 가까운 지역에서는 오로라를 볼 수 있어요</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">
+                    <div>
+                        <img src="https://cdn.pixabay.com/photo/2020/07/31/17/47/u-a-e-5453673_960_720.jpg">
+                    </div>
+                    <div>
+                        <h3>아랍에미리트</h3>
+                        <h4>아랍에미리트로 놀러가요</h4>
+                        <p>석유가 나는 부유한 국가이며 유명한 두바이 호텔이 있어요</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">
+                    <div>
+                        <img src="https://cdn.pixabay.com/photo/2016/11/05/22/13/lisbon-1801727_960_720.jpg">
+                    </div>
+                    <div>
+                        <h3>포르투갈</h3>
+                        <h4>포르투갈로 놀러가요</h4>
+                        <p>'나타'라고 불리는 에그타르트가 맛있는 것으로 유명해요 </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">
+                    <div>
+                        <img src="https://cdn.pixabay.com/photo/2015/03/09/18/34/beach-666122_960_720.jpg">
+                    </div>
+                    <div>
+                        <h3>몰디브</h3>
+                        <h4>몰디브로 놀러가요</h4>
+                        <p>인도양에 있는 섬나라로 매년  100만명 이상의 사람들이 방문하는 관광지에요</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">
+                    <div>
+                        <img src="https://cdn.pixabay.com/photo/2016/09/16/14/24/machu-picchu-1674143_960_720.jpg">
+                    </div>
+                    <div>
+                        <h3>페루</h3>
+                        <h4>페루로 놀러가요</h4>
+                        <p>마추픽추는 잉카 고전 양식으로 지어진 잉카 문명의 고대 요새 도시에요</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <div class="footer">
+            <h3>jmymble.co.kr</h3>
+            <p>여행가고 싶은 사람  </p>
+            
+        </div>
+
+    </div>
+</body>
+</html>

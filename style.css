@@ -1,0 +1,76 @@
+body {margin: 0;}
+.wrapper {width: 960px; text-align: center; margin: 0 auto;}
+.header, .footer {text-align: center; padding: 20px}
+
+.header div img {width: 320px; height: 150px; padding: 20px 0; margin: 0 auto;}
+
+.container { min-height: 1100px; width: 900px; padding: 30px; margin-left: auto; margin-right: auto; display: block; }
+/* .container {clear: both;} */
+.section {margin: 0; width: 600px; float: left; }
+.aside {margin: 0; width: 295px; float: right; }
+.footer h3 { height: 20px; text-align: center; padding: 20px;}
+.nav {text-align: left;}
+.nav li {display: inline-block; margin-right: 30px;}
+.nav li a {color: #000; text-decoration: none;}
+.nav li a:hover {color: blue;}
+body div img {width: 600px; display:block; float: left;}
+.btn {width: 250px; height: 100px; font-size: 20px; display: block; float: left; margin: 0 23px; }
+.link {display: block; float: right; margin: 0 70px;}
+.card {width: 400px; padding: 40px 10px; float: left;} 
+.card img {width: 170px; height: 170px; transition: all .2s;}
+.card a {color: #222; text-decoration: none;}
+.card a > * {float: left;}
+.card a > div:first-child { overflow: hidden; margin: 0 5px;}
+.card a > div:last-child {width: 220px;}
+.card a > div > p {height: 42px; overflow-y: ellipsis;}
+.card a > div > h3, .card > a > div h4 {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.card h3 {color: #00cc00;}
+
+.card a:hover img {transform: scale(1.03);}
+.card a > div:last-child:hover h4:hover {text-decoration: underline;}
+.nav .home {
+    display: block; float: left;
+    background-image: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png);
+    width: 60px; height: 40px; 
+    background-position: -4px -12px;
+}
+.nav .board {
+    display: block;
+    float: left;
+    background-image: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png);
+    width: 90px; height: 50px; 
+    background-position: -215px 121px;
+    margin-bottom: 10px;
+}
+.header hr {clear: left;}
+
+form {width: 500px; margin: 0 auto;}
+form input:not([type="checkbox"]), form button {width: 90%; padding: 8px; margin: 10px 0;}
+
+.con-wrapper { width: 500px; padding: 0 10px ; margin: 0 auto;}
+.contract { white-space: pre-line; height: 300px; overflow: scroll;}
+.text {font-size: 20px; text-align: justify;}
+.agree {float: right;}
+#btn {width: 20%; float: right;}
+
+/* .drop {display: none;} */
+.drop a {
+    border: 1px solid;
+    background-image: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png);
+    width: 90px; height: 40px; 
+    background-position: -64px 82px;
+    margin-top: 40px;
+    margin-left: 45px;
+    /* display: block; */
+    position: absolute;
+}
+/* 
+.drop2 {
+    background-image: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png);
+    width: 90px; height: 40px; 
+    background-position: -178px 82px;
+    margin-top: -15px;
+    margin-left: 53px;
+    display: none;
+    display: block;
+} */
