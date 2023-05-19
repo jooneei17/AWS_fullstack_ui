@@ -1,0 +1,64 @@
+        /* common */
+        body {margin: 0;}
+        .clearfix::after{display: block; content:''; clear: both; }
+        .hide {display: none;}
+        
+        /* header, gnb */
+        header {background-color: rgb(249, 219, 185); padding: 20px;}
+        .nav-wrap {background-color: beige;}
+        header > div, main, .nav-wrap nav {width: 978px; margin: 0 auto; }
+        .nav-wrap a { background: url(https://cdn.discordapp.com/attachments/1070923622404849747/1077511487976902708/KakaoTalk_20230220_203049440.png) no-repeat; text-indent: -9999px;}
+        .gnb {margin: 0; padding: 16px; }
+        .gnb > li,  .gnb > li > a  {display: block; float: left; width: 50px; height: 20px; position: relative;}
+        .gnb > li:first-child > a {background-position: -27px -32px; }
+        .gnb > li:last-child > a {background-position: -215px -32px; }
+        .gnb-dropdown {position: absolute; background-color: beige;  top: 36px; left: -8px; padding: 8px; z-index: 99999; display: none;}
+        .gnb-dropdown li {list-style: none; width: 100px; margin: 10px;}
+        .gnb-dropdown li a {display: block; width: 100px; }
+        .gnb-dropdown li:first-child a {background-position: -77px -32px; }
+        .gnb-dropdown li:last-child a {background-position: -183px -32px; }
+         .nav-wrap .gnb a:hover, .nav-wrap .gnb a:focus {background-position-y: -59px;}
+
+        /* index main */
+        .index article {float: left; width: 690px; padding: 20px;}
+        .slider { width: 690px; }
+        .slider img {width: 100%;}
+
+        .index article section {margin: 50px 0; }
+        .index aside { float: right; width: 200px; padding: 20px;}
+
+        /* index second */
+        .index .item-wrap {width: 330px; float: left; margin: 5px;}
+        .index .img-wrap {height: 120px; overflow: hidden;}
+        .index .img-wrap, .index .img-wrap + div {float: left;}
+        .index .img-wrap + div {width: 200px; margin-left: 5px;}
+        .index .img-wrap, .index .img-wrap img {width: 120px; }
+        .index .img-wrap img:hover {transform: scale(1.05);}
+
+        /* index thrid */
+        .index .third > h2 ~ div {
+            height: 200px; 
+            background:url(https://contents.kyobobook.co.kr/pmtn/2023/banner/230221/i_1624_450_01.jpg) center;
+            background-size: cover;
+        }
+        aside a:nth-of-type(1) {display: block; text-decoration: none; padding: 30px 0; 
+            background-color: rgb(240, 202, 131); color: black; padding: 20px; 
+            padding-top: 67px; text-align: center;}
+        aside a:nth-child(1):hover{color: white}
+
+        /* board-list*/
+        .board-list {padding: 50px 0}
+        .board-list table {width: 100%; border-collapse: collapse;}
+        .board-list thead { background-color: #ddd;}
+        .board-list th, .board-list td {padding: 14px;}
+        .board-list th {width: 10%; }
+        .board-list th+th {width: 75%;}
+        .board-list th+th+th {width: 15%;}
+        .board-list td {text-align: center; border-top:  3px solid #ddd;}
+        .board-list td:nth-child(2) {text-align: left;}
+        .border-list tfoot td {text-align: right; padding-right: 30px;}
+        .pagenation {text-align: center;}
+
+        /* footer */
+        footer {padding: 30px; text-align: center; background-color: rgb(240, 202, 131); }
+
