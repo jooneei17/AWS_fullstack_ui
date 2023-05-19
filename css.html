@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function() {
+            let paddings = [10, 20, 30, 40]
+            $("button").click(function() {
+                $("p")
+                .css("text-decoration", "underline")
+                .css({border: "3px solid red", background: "orange"})
+                .css("padding", function(i) {
+                    //funtion의 파라메터는 인덱스 값
+                    //padding에 제공할 값이 함수의 반환 값
+                    return paddings[i] + "px"
+                })
+            })
+            $("div:nth-child(4) p").parent().next().children().css("font-size", "2em")
+            .parent().prev() //4 div
+            .prevAll() // 1 2 3 div
+            .find("p").css("color", "red") 
+           
+            // $("ul").eq(0).find("li:gt(1)").css("color", "red")
+            // .parentsUntil("html")
+            // .find("ul:eq(1) li:gt(1)")
+            // .css("color", "red")
+            $("ul li")
+                .filter(":gt(1)").css("color", "red")
+                //end를 사용하면, 31번째줄 $("ul li")로 가게 된다. 
+            .end().css("font-style", "italic")
+                .eq(-3).css("color", "blue")
+            $("ul")
+                .find("li:gt(1)").css("textDecoration", "underline")
+            .end() //여기서 end는 ul로 감.
+                .last().css("font-size", "1.5em")
+                    .find("li:eq(1)").css("color", "green")
+                .end().attr("title", "지정된 제목")
+
+        })
+    </script>
+</head>
+<body>
+    <div><p>문단1</p></div>
+    <div><p>문단2</p></div>
+    <div><p>문단3</p></div>
+    <div><p>문단4</p></div>
+    <div><p>문단5</p></div>
+    <div><p>문단6</p></div>
+    <div><p>문단7</p></div>
+    <div><p>문단8</p></div>
+    <button>클릭</button>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+    <div>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+    </div>
+</body>
+</html>

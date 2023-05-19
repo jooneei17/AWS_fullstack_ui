@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        form {width: 500px; margin: 0 auto}
+        form input {padding: 1em; width: 90%; }
+        form div:nth-of-type(4) {text-align: center;}
+        form button {padding: 1em; width: 80%; }
+        p:last-child {font-size: 11px; color: red;}
+        .invalid {border: 1px solid red; box-shadow: 0 0 10px #f005;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>  
+        $(function() {
+            $("form").submit(function() {
+                event.preventDefault();
+                
+                //초기화
+                $("input").removeClass("invalid").parent().next().text("");
+                $.ajax("member.json").done(function(data) {
+                    let id = $("input").eq(0).val()
+                    if(id.length < 8 || id.length > 15) {
+                        //문제상황 : 유효하지 않은 아이디
+                        $("input:eq(0)").addClass("invalid")
+                            .parent().next().text("ID는 8자 이상 15자 이하로 작성하세요")
+                        return false
+                    }
+                    else {
+                        for(let i in data) {
+                            if(id == data[i].id) {
+                                $("input:eq(0)").addClass("invalid")
+                                    .parent().next().text("이미 존재하는 ID입니다")
+                                return false
+                            }
+                        }
+                    }
+                    let pw = $("input").eq(1).val()
+                    if(pw.length < 4) {
+                        $("input:eq(1)").addClass("invalid")
+                            .parent().next().text("PW는 4글자 이상으로 작성하세요")
+                        return false
+                    }
+                    let name = $("input").eq(2).val()
+                    if(!name.trim()) {
+                        $("input:eq(2)").addClass("invalid")
+                            .parent().next().text("이름을 작성하세요")
+                        return false
+                    }
+                    $(this).submit()
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입</legend>
+            <div>
+                <p><label for="id">ID</label></p>
+                <p><input type="text" id="id" name="id" placeholder="ID를 입력하세요" ></p>
+                <p></p>
+            </div>
+            <div>
+                <p><label for="id">PW</label></p>
+                <p><input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요"></p>
+                <p></p>
+            </div>
+            <div>
+                <p><label for="name">이름</label></p>
+                <p><input type="text" id="name" name="name" placeholder="이름을 입력하세요"></p>
+                <p></p>
+            </div>
+            <div>
+                <button>회원가입</button>
+            </div>
+        </fieldset>
+    </form>    
+</body>
+</html>

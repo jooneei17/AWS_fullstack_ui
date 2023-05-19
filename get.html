@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box {width: 100px; height: 100px; background-color: orange;}
+        .box:hover {border-radius: 50%; transition: all .2s;}
+        .bg-red {background-color: red;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("div").eq(0).text("<b>굵은 글씨</b>")
+            $("div").eq(1).html("<b>굵은 글씨</b>")
+            // 함수를 통해 제어한다 -> 
+            $("div").eq(2).html(function(idx, html) {
+                console.log(html);
+                // return html + "<p>추가 글</p>"
+                return $(this).html() + "<p>추가 글</p>"
+            }).attr({title: "추가된 제목", id: "div2"})
+            $("div").text(function(i) {
+                return i + "번째 텍스트"
+            })
+            $("body").append("<div>append로 추가된 메시지</div>")
+            $("body").prepend("<div>prepend로 추가된 메시지</div>")
+
+            $("div").eq(2).after("<div>after로 추가</div>").before("<div>before로 추가</div>")
+            
+            $("<div>")
+                .text("appendTo로 추가된 메시지")
+                .css("color", "red")
+                .attr("title", "추가된 제목")
+                // .attr({title:"추가된 제목"})
+                .appendTo("body")
+
+            $(".box").click(function() {
+                //toggleClass 한 줄로 아래 if else문을 대신할 수 있다.
+                // $(this).toggleClass("bg-red")
+
+                // let cls = $(this).attr("class");
+                // console.log(cls);
+                // if(cls.endsWith("bg-red")) {
+                //     $(this).attr("class", "box")
+                // }
+                // else {
+                //     $(this).attr("class", "box bg-red")
+                // }
+                // $(this).css("background", "red")
+
+
+                //hasClass를 삼항으로 처리할 수 있다.
+                $(this).hasClass("bg-red") ? $(this).removeClass("bg-red") : $(this).addClass("bg-red")
+                $("body").remove();
+           
+            })
+        
+
+        })
+    </script>
+
+</head>
+<body>
+    <div class="box bg-red"></div>
+    <div></div>
+    <div></div>
+    <div><p>기존 글</p></div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        div:first-child {border: 2px solid; width: 800px; padding: 15px; margin: 0 auto; }
+        /* 최종 너비는  */
+        .toggle-wrap {width: 834px; margin: 0 auto; position: relative; } 
+        .toggle {border: 2px solid; width: 800px; padding: 15px; margin: 0 auto; height: 300px; position: absolute; left: 0; top: 0; background: orange; display: none;  } 
+        .content {border: 2px solid; width: 800px; padding: 15px; margin: 0 auto; height: 500px; background-color: #ccc;} 
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        /*
+            show hide toggle -- show일 때는 hide,  hide일 때는 show로
+            fadeIn fadeOut fadeToggle
+            slideDown slideUp slideToggle 
+        
+        */
+       $(function() {
+        $("div").eq(0).hover(function() {
+            $(".toggle").stop().slideDown(100)
+        }, function() {
+            $(".toggle").stop().slideUp(100)
+        }) 
+       })
+    </script>    
+</head>
+<body>
+    <div>마우스 오버 영역</div>
+    <div class="toggle-wrap">
+        <div class="toggle">토글 영역</div>
+    </div>
+    <div class="content">실제 컨텐츠</div>
+    
+</body>
+</html>

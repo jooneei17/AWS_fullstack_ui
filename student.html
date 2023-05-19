@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function() {
+                $.ajax("students.xml", {
+                    success:function(data) {
+                        console.log(data);
+                        //data >> typeof object (XML Object) 
+                        //특정 문자열 제작
+                        let str = "<table border='1'>"
+                        $(data).find("student").each(function() {
+                            str+= "<tr>"
+                                str += "<td>" + $(this).find("no").text() + "</td>"
+                                str += "<td>" + $(this).find("name").text() + "</td>"
+                                // str += "<td>" + $(this).find("score").text() + "</td>"
+                                str += "<td>" + (parseInt(Math.random() * 41) + 60) + "</td>"
+                                str += "</tr>"
+                        })
+                        str += "</table>"
+                        //body append
+                        $("body").append(str)
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>학생 데이터 가져오기</button>
+</body>
+</html>

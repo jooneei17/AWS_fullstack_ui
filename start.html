@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        // $
+        // jQuery
+        // $.noConflict(); //$를 undefined으로 바꿈
+
+        console.log($);
+        console.log(jQuery);
+        console.log($ === jQuery);
+
+        //namespace 충돌 방지
+        (function($) {
+
+        })(jQuery)
+
+        //$(문자열) : selector
+        //$(객체) : jQuery Object wrapper
+        //$(함수) : ready(onload)
+
+        $(window).on("load", function() {
+            console.log($("h1").text(), "load");
+
+        })
+        $(document).ready(function() {
+            console.log($("h1").text(), "ready1");
+        })
+
+        $().ready(function() {
+            console.log($("h1").text(), "ready2");
+        })
+        $(function() {
+            console.log($("h1").text(), "ready3");
+            $("h1").css("color", "red")
+            $("h1:nth-of-type(1)").css("background-color", "orange")
+
+            //$(문자열) >> jQuery selecor로서 동작하며 wrapping Object 객체를 래핑한다.
+            //$(문자열) >> DOM으로 바꾸기
+            $("h1")[0].title = "첫 번째 제목"
+            //DOM >> jQuery Obj로 바꾸기
+            //attr : attribute setter 이다. 
+            $(document.getElementsByTagName("h1")[0]).attr("title", "변경된 제목")
+
+            //1번째 인덱스의 title을 다음과 같이 지정하기. 
+            $("h1").get(1).title = "두 번째 제목"
+
+            //eq는 특정 인덱스번호에 해당하는 객체를 가져옴
+            //get 과의 차이점은 get은 가져왔을 경우, dom으로 변환되지만
+            // eq는 여전히 jQuery 상태이다. 
+            $("button").eq(0).click(function() {
+                $("h1").hide(500);
+            })
+
+            $("button").eq(1).click(function() {
+                $("h1").show(500);
+            })
+
+            // $("h1").click(function() {
+            //     alert($(this).text()); //getter
+            // })
+
+            // $("h1").click(function() {
+            //     $(this).text(prompt("변경할 택스트")) //setter
+            // })
+            // $("h1").click()
+            // $("h1").trigger("click") //위 코드에 원본버전
+        })
+
+    </script>
+</head>
+<body>
+    <button>숨기기</button>
+    <button>보이기</button>
+
+    <h1>헬로우 jQuery</h1>
+    <h1>Hellow jQuery</h1>
+</body>
+</html>
