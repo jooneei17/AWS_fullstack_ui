@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  </head>
+<body>
+  <button id="btn">이미지 추가</button>
+  <script>
+    let cnt = 0;
+    document.getElementById("btn").addEventListener("click", function() {
+      // 제작된 이미지 태그
+     let img = document.createElement("img");
+    //  멤버 변수(=필드)에 요소 지정
+     img.src = "../img/html5_icon.png";
+     img.title = 'html 로고';
+     img.alt = "html 로고" + cnt++;
+
+    //  body태그 밑에 자식으로 img를 추가
+     document.body.appendChild(img);
+    })
+  </script>
+</body>
+</html>

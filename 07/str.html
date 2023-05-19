@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    h1 {color:#00ff00}
+    h2 {color:green}
+    h3 {color:#faf}
+    h4 {color: rgb(255, 0, 0)}
+    h4 {color: rgba(255, 0, 0. .5)}
+    .box{width:100px; height:100px; background: rgba(255, 0, 0, .5);}
+    .box2 {position:relative; top:-50px; left:50px;}
+    .box1 {background: #00f8;}
+    h5 {color:hsl(360, 0, 50)}
+  </style>
+  </head>
+<body>
+  <form name="frm">
+    <input name="userid">
+    <button>회원 가입</button>
+  </form>
+  <script>
+    function isId(str){
+      return /^[A-Za-z0-9]*$/g.test(str)
+      // let ret = true;
+      // for(let i = 0; i < str.length; i++){
+      //   let val = str[i].charCodeAt();
+      //   if(!(val >= 97 && val <= 97 + 25 || val >= 48 && val <= 48 + 9)){
+      //     return false;
+      //   }
+      // }
+      // return ret;
+    }
+
+    document.frm.onsubmit = function(){
+      event.preventDefault();
+      let userid = document.frm.userid.value;
+      if(!isId(userid)){
+        alert('유효하지 않은 아이디 입니다.')
+      }
+    }
+  </script>
+  <h1>Hello Java</h1>
+  <h2>Hello Java</h2>
+  <h3>Hello Java</h3>
+  <h4>Hello Java</h4>
+  <h5>Hello Java</h5>
+
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+</body>
+</html>

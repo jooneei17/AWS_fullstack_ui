@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .wrapper{width:500px; border:1px solid blue; margin: 0 auto;}
+    .wrapper p{ border:1px solid red;}
+    /* 전혀 warpping을 안 하겠다 -> 게시판에서 자주 사용*/
+    .wrapper p:nth-child(1){white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    /* 들여쓰기(탭), 엔터 등을 그대로 인식 -> 소스 코드 쓸 때 자주 사용*/
+    .wrapper p:nth-child(2){white-space: pre;}
+    /* 행에대한 이동만 시킴 -> 동의 약관에서 자주 사용 */
+    .wrapper p:nth-child(3){white-space: pre-line; height:100px; overflow: scroll;}
+    /* 행만 가지고 제어. 탭이나 엔터 등의 모든 공백을 한 칸으로 인식 */
+    .wrapper p:nth-child(4){white-space: pre-wrap;}
+    .img-thum-wrap {border:1px solid}
+    .img-thum-wrap img{width: 200px;  transition: all .2s; opacity: .4;}
+    .img-thum-wrap img:hover { transform: scale(1.03); opacity: 1;}
+    .img-thum-wrap > div {display:inline-block;  margin:20px; overflow: hidden; width:200px; height:52px;}
+    .border-box{width:400px; height:200px;  border:5px solid; padding:20px; margin:10px auto; box-sizing: border-box;}
+    .content-box{width:400px; height:200px; border:5px solid; padding:20px; margin:10px auto }
+
+    .border{width:300px; height:300px; background-color: pink; margin:10px auto;}
+    .radi1{border-radius: 20px; border-top-left-radius: 50px;}
+    .radi2{border-radius: 50px 20px 100px;}
+    .radi3{border-top-right-radius: 100px 50px;}
+    .radi4{height: 300px; padding:20px; border:5px solid red; border-radius: 50%;
+      background-image: -webkit-linear-gradient(right, red, white);
+      /* background-image: linear-gradient(to right, red, white) */
+    }
+
+</style>  
+
+</head>
+<body>
+  <div class="wrapper">
+    <p>
+      대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 
+      군사에 관한 것도 또한 같다. 헌법개정안이 제2항의 찬성을 얻은 때에는 헌법개정은 확정되며, 
+      대통령은 즉시 이를 공포하여야 한다. 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다. 
+      교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다.
+    </p>
+    <p>
+      대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 
+      군사에 관한 것도 또한 같다. 헌법개정안이 제2항의 찬성을 얻은 때에는 헌법개정은 확정되며, 
+      대통령은 즉시 이를 공포하여야 한다. 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다. 
+      교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다.
+    </p>
+    <p>
+      랄랄라대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 
+      군사에 관한 것도 또한 같다. 헌법개정안이 제2항의 찬성을 얻은 때에는 헌법개정은 확정되며, 
+      대통령은 즉시 이를 공포하여야 한다. 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다. 
+      교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다.
+    </p>
+    <p>
+      대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 
+      군사에 관한 것도 또한 같다. 헌법개정안이 제2항의 찬성을 얻은 때에는 헌법개정은 확정되며, 
+      대통령은 즉시 이를 공포하여야 한다. 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다. 
+      교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다.
+    </p>
+    <div class="img-thum-wrap">
+      <div><img src="../img/blog-post-img1.jpg"></div>
+      <div><img src="../img/blog-post-img2.jpg"></div>
+      <div><img src="../img/blog-post-img3.jpg"></div>
+      <div><img src="../img/blog-post-img4.jpg"></div>
+      <div><img src="../img/blog-post-img5.jpg"></div>
+      <div><img src="../img/blog-post-img6.jpg"></div>
+
+    </div>
+    
+    <div class="border-box">
+    </div>
+    <div class="content-box">
+
+    </div>
+      <div class="border radi1"></div>
+      <div class="border radi2"></div>
+      <div class="border radi3"></div>
+      <div class="border radi4"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    body{
+      background-color: #9af; 
+      background-image: url(https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png);
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: bottom;
+      /* 스크롤 내리게 하기 위해서 height 조절 */
+      height: 5000px;
+      /* 현재 화면에서의 상대적 위치. 스크롤을 내리면 따라다님 */
+      background-attachment: fixed;
+    }
+    body > h1 {background-color: orange; background-image: url(https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png);
+      width: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+    }
+    h2 span{background-color: #aaa8; }
+    body > * {border:10px solid; padding: 20px; width:100px; background-clip: padding-box;}
+    .grid{width:200px; height: 200px;
+    /* 선형, 원형 */
+    /* 빨간 색을 70% 칠하고 나머지를 균일하게 */
+      background-image: radial-gradient(red, green, blue);
+    }
+    .grid2 {
+      height:30px;
+      width: 800px;
+      background-image:repeating-linear-gradient(45deg, 
+      red, red 20px,
+      white 20px, white 40px
+      /* orange 20px, orange 40px,
+      yellow 40px, yellow 60px,
+      green 60px, green 80px,
+      blue 80px, blue 100px,
+      navy 100px, navy 120px,
+      purple 120px, purple 140px */
+      );
+    }
+    .sprite {
+      padding: 0;
+      border: 0;
+    }
+    .sprite a {
+      height: 40px;
+      background-image: url(https://www.google.com/images/nav_logo321.webp);
+      background-position: -74px 0;
+      background-size: 167px;
+      width: 20px;
+      /* 작성한 텍스트를 보이지 않게 만들기 */
+      text-indent: -9999px;
+      display:block;
+    }
+
+  </style>  
+
+</head>
+<body>
+  <h1>텍스트</h1>  
+  <h2><span>텍스트</span></h2> 
+  <div class="grid"></div>
+  <div class="grid2"></div>
+  <div class="sprite"><a href="">링크</a></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <form novalidate>
+    <fieldset>
+      <legend>
+        <h3>수강 형태</h3>
+      </legend>
+      <label><input type="radio" name="sugang" value="day">주간</label>
+      <label><input type="radio" name="sugang" value="night">야간</label>
+    </fieldset>
+  
+    <fieldset>
+      <legend>
+        <h3>수강 과목</h3>
+      </legend>
+      <label><input type="checkbox" name="subject" value="java">java</label>
+      <label><input type="checkbox" name="subject" value="db">db</label>
+      <label><input type="checkbox" name="subject" value="html">html5</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <h3>성별</h3>
+      </legend>
+      <select name="gender">
+        <option value="male">남</option>
+        <option value="female">여</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <h3>취미</h3>
+      </legend>
+      <select name="hobby" multiple>
+        <option value="exec">운동</option>
+        <option value="sing">노래</option>
+        <option value="read">독서</option>
+        <option value="game">게임</option>
+      </select>
+    </fieldset>
+
+    <input tupe="text" name="result" size="50" maxlength="10" minlength="1" value="abcd" readonly>
+    <input tupe="text" name="result" size="50" maxlength="10" minlength="1" value="abcd" disabled>
+    <textarea name="content" cols="30" rows="10"></textarea>
+
+    <button>전송</button>
+  </form>  
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .balloon {background-color: #222; color:white; max-width: 300px; padding: 20px; border-radius: 20px;} 
+    /* .tri{width: 10px; height:10px; border: 50px solid; border-color: red orange green blue;} */
+    .balloon::after {
+      float:left;
+      width: 0px; 
+      border: 20px solid transparent; 
+      border-top-color: #222; 
+      border-top-width: 40px; 
+      margin-top:20px;
+      margin-left: 130px; 
+      transform: skewX(-30deg); 
+      display:block; 
+      content: "";
+    }
+  </style>  
+
+
+</head>
+<body>
+  <div class="balloon">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</div>
+  <!-- <div class="tri"></div> -->
+</body>
+</html>

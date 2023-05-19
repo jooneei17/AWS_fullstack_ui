@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    /* body에 margin을 제거하면 끝까지 깔끔하게 적용 가능 */
+    body {margin:0;}
+    #header, #footer {text-align: center; background-color: azure; padding: 20px}
+    #container {min-height: 800px; width: 1130px; padding: 30px; margin-left: auto; margin-right: auto;}
+    #section {margin: 0; width: 748px; float: left; border: 1px solid}
+    #aside {margin: 0; width: 348px; float: right; border: 1px solid}
+    #nav {text-align: left; width:1130px; padding:30px; margin: 0 auto;}
+    #nav li {display: inline-block; margin-right:  30px;}
+    #nav li a {color: #000; text-decoration: none;}
+    #nav li a:hover {color:lime;}
+  </style>
+  </head>
+<body>
+  <div id="wrap">
+
+    <div id="header">
+        <h1>머릿말 부분</h1>
+        <div id="nav">
+            <li><a href="#">메일</a></li>
+            <li><a href="#">카페</a></li>
+            <li><a href="#">블로그</a></li>
+            <li><a href="#">지식인</a></li>
+        </div>
+    </div>
+
+    <div id="container">
+        <h3 id="section">본문 부분</h3>
+        <h3 id="aside">로그인 부분</h3>
+    </div>
+
+    <div id="footer">
+        <p>copyright &copy; all rights reserved.</p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .wrapper{width: 600px; border: 5px solid; margin: 0 auto; display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-evenly;
+        align-items: start;
+        align-content: space-evenly;
+    }
+        .box  {width: 200px; height: 200px;}
+        .box1 {background-color: red; }
+        .box2 {background-color: orange; }
+        .box3 {background-color: yellow;
+            order:2;
+
+         }
+        .box4 {background-color: green; }
+        .box5 {background-color: blue; 
+            order:1;
+            flex-grow: 2;
+            /* justify-self: left; */
+            /* align-self: flex-end; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+    <img src="../img/bnr_join_benefit_v3.svg">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1307.7634644397124!2d126.89655829245415!3d37.485576337892816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e3b23d5950d%3A0x55ae8c80a078767d!2z642U7KGw7J2A7Lu07ZOo7YSw7JWE7Lm0642w66-47ZWZ7JuQIOq1rOuhnOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1676961291536!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>

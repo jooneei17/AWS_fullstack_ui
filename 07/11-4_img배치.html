@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .wrapper {width: 330px; margin: 0 auto; display: flex; flex-wrap: wrap; }
+        .wrapper div {width: 320px; height: 320px; 
+            border: 1px solid black; background: no-repeat; background-size: cover; margin: 5px;} 
+         .wrapper div h1{text-shadow: 0 0 5px black; color: white; text-indent: 20px;}
+        .wrapper div:nth-child(1) {background-image: url(../img/work-1.jpg);}
+        .wrapper div:nth-child(2) {background-image: url(../img/work-2.jpg);}
+        .wrapper div:nth-child(3) {background-image: url(../img/work-3.jpg);}
+        .wrapper div:nth-child(4) {background-image: url(../img/work-4.jpg);}
+        .wrapper div:nth-child(5) {background-image: url(../img/work-5.jpg);}
+        @media  screen and (min-width: 667px) {
+            /* 667px는 차이나는 부분을 직접 수정한 것. 수치에 마우스 휠 내리면 사이즈 줄어듦 */
+            .wrapper {width: 667px;}
+            /* background-position을 가운데로 맞추게 되면 사진의 가운데 부분을 가져올 수 있다. */
+            /* .wrapper div:nth-child(5) {flex-grow: 2; background-position: center;} */
+            /*  일정 크기가 되면(여기에서는 작아지면) 이미지를 바꾼다.*/
+            .wrapper div:nth-child(5) {flex-grow: 2; background:url(../img/work-6.jpg) center;}
+        }
+    
+        @media  screen and (min-width: 1000px) {
+            .wrapper {width: 1000px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div><h1>요소1</h1></div>
+        <div><h1>요소2</h1></div>
+        <div><h1>요소3</h1></div>
+        <div><h1>요소4</h1></div>
+        <div><h1>요소5</h1></div>
+    </div>
+</body>
+</html>

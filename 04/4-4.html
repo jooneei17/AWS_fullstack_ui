@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+</head>
+<body>
+  <p>
+    <abbr title="?">HTML </abbr> Hypertext Markup Language
+  </p>
+  <span>일반 텍스트<b>굵은 텍스트</b></span>
+  <span>일반 텍스트<strong>굵은 텍스트</strong></span>
+
+  <hr>
+  <span>일반 텍스트 <i>기울임 텍스트</i></span>
+  <span>일반 텍스트 <em>기울임 텍스트</em></span>
+
+  <hr>
+  <button type="button" id="btn">결과 확인</button>
+  <input id="val1"> + <input id="val2"> = <input id="result" readonly>
+  <script>
+    document.getElementById("btn").onclick = function() {
+      let val1  = parseInt(document.getElementById("val1").value)
+      let val2  = parseInt(document.getElementById("val2").value)
+      document.getElementById("result").value = val1 + val2
+    }
+  </script>
+
+  <hr>
+  텍스트 <cite>인용부분</cite> <q cite="https://www.google.com">인용2</q> 텍스트
+
+  <pre>
+    <code>
+      document.getElementById("btn").onclick = function() {
+        let val1  = parseInt(document.getElementById("val1").value)
+        let val2  = parseInt(document.getElementById("val2").value)
+        document.getElementById("result").value = val1 + val2
+      }
+    </code>
+  </pre>
+
+
+</body>
+</html>

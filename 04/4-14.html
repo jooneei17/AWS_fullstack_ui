@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    form {width:500px; margin:0 auto;}
+    form input:not([type="checkbox"]), form button {width:90%; padding: 8px; margin: 10px 0;}
+    form output {font-size: 11px; color: red;}
+  </style>
+</head>
+<body>
+  <form name="frm" action="2-1.html" method="post">
+    <legend>로그인</legend>
+    <label for="id">ID</label><br>
+    <input id="id" name="userid" placeholder="아이디를 입력하세요" value=""><br>
+    
+    <label for="pw">PW</label><br>
+    <input type="password" id="pw" name="password" placeholder="비밀번호를 입력하세요"><br>
+    
+    <label><input type="checkbox" name="chk" value="remember-me">아이디 저장</label><br>
+    <output name="result"></output>
+    <!-- <button>로그인</button> -->
+    <input type="submit" value="로그인">
+
+  </form>
+  <script>
+    let frm = document.frm;
+    frm.addEventListener("submit", function (e) {
+      frm.result.innerHTML = "";
+      event.preventDefault();
+      if(frm.userid.value.trim().length == 0){
+        // if(!frm.userid.value.trin() )
+        frm.result.innerHTML = "아이디를 입력하세요";
+      }
+      else if(frm.password.value.trim().length == 0){
+        frm.result.innerHTML = "비밀번호를 입력하세요";
+      }
+      else{
+        frm.submit();
+      }
+    })
+  </script>
+</body>
+</html>

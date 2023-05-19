@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    /*
+      transition 4가지
+      property, duration, timing-function, delay    
+    
+    */
+
+    .box{
+      width: 100px; height: 100px; background-color: red;
+      transition: all 1s cubic-bezier(.22,-0.2,.91,.37) .2s ;
+    }
+    body div:hover .box{
+      width: 300px; margin-left: 300px;
+    }
+    .ease {background-color: orange; transition-timing-function: ease;}
+    .linear {background-color: yellow; transition-timing-function: linear;}
+    .ease-in {background-color: green; transition-timing-function: ease-in;}
+    .ease-out {background-color: blue; transition-timing-function: ease-out;}
+    .ease-in-out {background-color: violet; transition-timing-function: ease-in-out;}
+  </style>
+
+
+</head>
+<body>
+  <div>
+    <div class="box">cubic</div>
+    <div class="box ease">ease</div>
+    <div class="box linear">linear</div>
+    <div class="box ease-in">ease-in</div>
+    <div class="box ease-out">ease-out</div>
+    <div class="box ease-in-out">ease-in-out</div>
+  </div>
+
+</body>
+</html>

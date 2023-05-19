@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        :focus {box-shadow: 0 0 5px lime;}
+        :disabled {border-color: red;}
+        :enabled {border-color: blue;}
+        :checked + label {color: plum;}
+    </style>    
+</head>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <td><input name="id" tabindex="1"></td>
+                <td rowspan="2"> <button tabindex="3">로그인</button></td>
+            </tr>
+            <tr>
+                <td> <input type="password" name="pw" tabindex="2"> </td>
+            </tr>
+            <tr>
+                <td><input disabled></td>
+                <td><input type="checkbox">텍스트</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <style>
+    .clearfix::after {content: ''; display: block; clear: both;}
+    .img-wrap {border: 1px solid; width: 200px; height: 200px; float: left; perspective: 200px;}
+    img {transition: all .2s;}
+    .scale:hover{transform: scale(.8);}
+    .scalex:hover{transform: scalex(.9);}
+    .scaley:hover{
+      /* transform: scaley(1.2); */
+      width: 200px;
+      height: 250px;
+      margin-top: -25px;
+    }
+    .translate:hover {transform: translate(30px, -50px);}
+ 
+    .rotate:hover{transform: rotate(45deg);}
+    .rotatex:hover{transform: rotatex(45deg);}
+    .rotatey {backface-visibility: hidden;}
+    .rotatey:hover{transform: rotatey(180deg);}
+
+    .skew:hover{transform: skew(45deg, 30deg);}
+    .skewx:hover{transform: skewx(45deg);}
+    .skewy:hover{transform: skewy(45deg);}
+  
+  </style>
+  </head>
+  <body>
+    <div>
+      <div class="clearfix">
+        <h2>scale</h2>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="scale">
+        </div>
+        <div class="img-wrap">    
+          <img src="../img/ban1.gif" class="scalex">
+        </div>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="scaley">
+        </div>
+      </div>
+
+      <hr>
+  
+      <div class="clearfix">
+        <h2>translate</h2>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="translate">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="clearfix">
+        <h2>rotate</h2>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="rotate">
+        </div>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="rotatex">
+        </div>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="rotatey">
+        </div>
+        <div class="img-wrap">
+          <h2 class="rotatey">텍스트</h2>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="clearfix">
+        <h2>skew</h2>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="skew">
+        </div>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="skewx">
+        </div>
+        <div class="img-wrap">
+          <img src="../img/ban1.gif" class="skewy">
+        </div>
+      </div>
+  </div>
+</body>
+</html>
