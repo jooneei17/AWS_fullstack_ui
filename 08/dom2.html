@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        table {width: 800px; margin: 0 auto;}
+        th + th + th {width: 500px;}
+        th + th + th + th {width: 100px;}
+
+        .score tr:nth-child(2n) {background-color: #ddd;}
+    </style>    
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>발송자</th>
+            <th>제목</th>
+            <th>시간</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>더조은아카데미</td>
+            <td>출결 안내 사항</td>
+            <td>2023-01-11</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>더조은아카데미</td>
+            <td>출결 안내 사항</td>
+            <td>2023-01-11</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>더조은아카데미</td>
+            <td>출결 안내 사항</td>
+            <td>2023-01-11</td>
+        </tr>
+        
+    </table>
+
+    <script>
+        let chk = document.querySelector("th input");
+        chk.onchange = function() {
+            let flag = this.checked;
+            let chks = document.getElementsByTagName("input")
+            for(let i in chks){
+                chks[i].checked = flag;
+            }
+            
+            //에러 발생 관계로 사용x
+            // if(flag) {
+            //     for(let i in chks){
+            //         chks[i].setAttribute("checked", "aaa")
+            //     }
+            // }
+            // else {
+            //     for(let i in chks){
+            //         chks[i].removeAttribute("checked")
+            //     }
+            // }
+        }
+        let table = document.querySelector("table");
+        console.log(table.innerHTML);
+        console.log(table.innerText);
+
+        let obj = {
+            students :
+            [
+                {no: 1, name: '홍길동', kor: 90, eng: 50},
+                {no: 1, name: '고길동', kor: 80, eng: 40},
+                {no: 1, name: '김길동', kor: 70, eng: 40},
+                {no: 1, name: '이길동', kor: 60, eng: 50},
+            ]
+        };
+
+        let htmlStr = "<table border = '1' class='score'>";
+        for(let i in obj.students) {
+            htmlStr +="<tr>";
+            htmlStr += "<td>" + obj.students[i].no + "</td>";
+            htmlStr += "<td><a href=''>" + obj.students[i].name + "</a></td>";
+            htmlStr += "<td>" + obj.students[i].kor + "</td>";
+            htmlStr += "<td>" + obj.students[i].eng + "</td>";
+            htmlStr += "</tr>"
+        }
+        htmlStr += "</table>"
+
+        document.body.innerHTML += htmlStr;
+    </script>
+</body>
+</html>

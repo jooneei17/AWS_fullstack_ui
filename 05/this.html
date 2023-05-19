@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        console.log(this == window);
+        /* 
+            BOM : 브라우저 객체
+        */
+       let num = 10;
+       var value = "12345";
+       console.log(num);
+       console.log(window.num);
+       console.log(value);
+       console.log(window.value);
+
+       function fn() {
+            console.log("fn()");
+       }
+       fn();
+       window.fn();
+
+    //    window.alert("hello")
+
+    function forin(obj) {
+        console.log("========= ", obj , " =========");
+        for(let i in obj) {
+            console.log(i, ": ",obj[i]);
+        }
+    }
+    // screen : 화면(운영체제의 인식 화면)
+    // forin(screen);
+
+    // navigator : 사용자의 브라우저 정보(+위치)
+    // forin(navigator)
+    // navigator.geolocation.getCurrentPosition(function(obj) {
+    //     console.log(obj);
+    // });
+
+    // history : (현 화면) 방문기록
+    // forin(history)
+    // history.go(1) //앞으로 1페이지
+    // history.go(-21) //뒤로 2페이지
+
+    // location : 주소(url 관리)
+    // forin(location)
+    
+    // document : 문서
+    // forin(document)
+
+
+    // function say(message) {
+    //     console.log(message || "파라미터가 안 넘어옴");
+    // }
+    // say()
+    // say("12345")
+
+
+    let fn1 = function() {
+        console.log(this);
+    }
+
+    let fn2 = () => console.log(this)
+
+    let fn3 = x => x * x
+    // let fn3 = (x) => {
+    //     return x * x
+    // }
+
+    let fnArr = [fn1, fn2]
+
+    window.onload = function() {
+        for(let i in document.querySelectorAll("button")) {
+            document.querySelectorAll("button")[i].onclick = fnArr[i]
+        }
+    }
+
+    let obj1 = new fn1()
+    // let obj2 = new fn2()
+
+    let name = "홍길동"
+    let result = `안녕하세요 ${name} 님`
+
+    let firstName = 'John';
+    let lastName = 'Doe'
+
+    let person = {firstName : firstName} //키 값은 자체를 문자열로 인식하여 firstNAme : "John"
+    let person2 = {[firstName] : firstName} // John : "John"
+
+
+    // crud
+
+    //boardService.register(boardVo)
+    let boardService = (function () {
+        function register(boardVo) {
+            // 등록 처리
+            console.log(boardVo);
+        }
+        return {register : register } //외부에서 사용하기 위해 객체 형태로 호출 가능하도록 만들 수 있다. 
+    }) ()
+
+    boardService.register({title: "제목", content: "내용" })
+
+
+</script>    
+    <!-- <script src="test.js"></script> -->
+</head>
+<body>
+    <button>버튼1</button>
+    <button>버튼2</button>
+</body>
+</html>

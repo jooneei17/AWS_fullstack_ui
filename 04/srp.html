@@ -1,0 +1,73 @@
+<!-- /* 
+        가위 바위 보
+가위    D    W    L 
+바위    L     D    W
+보       W    L     D
+
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Document</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+                $(function() {
+                        // remember = []; //클릭되었을 때 초기화 되지 않는 위치이면서 완전 전역은 아닌 위치...
+                        let record = {t: 0, w: 0, d: 0, l: 0};
+                        $(":radio").click(function() {
+                                $("p").eq(0).find("span").text($(this).parent().text());
+                                // console.log($(this).data("val"));
+                                let my = $(this).data("val");
+                                let you = parseInt(Math.random() * 3)
+                                let result;
+                                switch(my - you){
+                                        case 0:
+                                                record.d++;
+                                                result = "무승부";
+                                                break;
+                                        case 1: case -2:
+                                                record.w++;
+                                                result = "승리!"
+                                                break;
+                                        case -1: case 2:
+                                                record.l++;
+                                                result = "패배!"
+                                }
+                                record.t++;
+                                let arr = ["가위", "바위", "보"];
+
+                                console.log("my " + $(this).data("val"));
+
+                                $("p").eq(0).find("span").text(arr[my]);
+                                $("p").eq(1).find("span").text(arr[you]);
+                                $("p").eq(2).find("span").text(result);
+                                $("p").eq(3).find("span").text(
+                                        record.t + "전 "
+                                        + record.w + "승 "
+                                        + record.d + "무 "
+                                        + record.l + "패 "
+                                        + "승률 " + (record.w / recordt * 100).toFixed(2) + "%");
+
+                                // remember.push(result)
+                                // $("p").eq(3).find("span").text(remember)
+
+
+                        })
+                })
+        </script>
+</head>
+<body>
+        <label>가위<input type="radio" name="srp" data-val="0"></label>
+        <label>바위<input type="radio" name="srp"  data-val="1"></label>
+        <label>보위<input type="radio" name="srp"  data-val="2"></label>
+        <p>당신의 패 <span></span></p>
+        <p>상대방의 패 <span></span></p>
+        <p>결과 <span></span></p>
+        <p>전적<span></span></p>
+</body>
+</html>

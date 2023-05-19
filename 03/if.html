@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">  
+  <script src="main.js"></script>
+  <script>
+    //undefined alert('문구') 알림
+    //string prompt ('문구', '기본값'); 사용자 입력값
+    // boolean confirm('문구'); 선택(참/거짓)
+
+    let age = prompt("나이를 입력하세요",  1);
+    let pay = 0;
+    if(age <= 7){
+        pay = 0;
+        // alert("0원 입니다")
+    } else if(age >= 8 && age <= 13){
+        pay = 450;
+        // alert("450원 입니다")
+    } else if(age >= 14 && age <= 19){
+        pay = 720;
+        // alert("720원 입니다")
+    } else if(age >= 20 && age < 70){
+        pay = 1200;
+        // alert("1200원 입니다")
+    } else if(age >= 70){
+        pay = 0;
+        // alert("0원 입니다")
+    }
+    alert("가격은 " + pay + "입니다")
+
+    //위 코드의 문제점... 
+    // age가 13세 이하, 19세 이하만 생각하고, 나머지는 else로 처리하면 됨
+    
+    let fare;
+    if(age <= 7 || age >= 70){
+        fare = 0
+    } else if(age <= 13){
+        fare = 450
+    } else if(age <= 19){
+        fare = 720
+    } else {
+        fare = 1200
+    }
+    alert(fare + "원")
+
+    let arr = ['일', '월', '화', '수', '목', '금', '토']
+    alert(arr[new Date().getDate()] + "요일")
+ </script>
+</head>
+<body>
+ 
+</body>
+</html>

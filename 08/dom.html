@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+<body>
+    <input id="userid" title="사용자 아이디" placeholder="아이디를 입력하세요">
+    <h2>제목1</h2>
+    <h2>제목2</h2>
+    <div id="wrap">
+        <h2>제목3</h2>
+        <h2>제목4</h2>
+        <h2>제목5</h2>
+    </div>
+    <script>
+        let userid = document.getElementById("userid");
+        let userid2 = document.querySelector("#userid");
+
+        console.log(userid);
+        console.log(userid == userid2);
+
+        // for(let i in userid){
+        //     console.log(i, userid[i]);
+        // }
+        userid.style.padding = '12px';
+
+        let h2s = document.getElementsByTagName("h2");
+        console.log(h2s);
+        console.log(h2s.length);
+        
+        h2s = document.getElementById("wrap").getElementsByTagName("h2")
+        console.log(h2s);
+        console.log(h2s.length);
+
+        for(let i in h2s){
+            // console.log(h2s[i].innerText);
+            h2s[i].innerText = +i + 1 + " 번째 덮어쓴 텍스트"
+            //+i 한 이유 : 문자타입으로 인식하여 값이 이상하게 나옴. 
+            //문자를 숫자로 변경하는 +연산자를 앞에 붙여줌 
+        }
+
+        console.log(userid.title);
+        console.log(userid["title"]);
+        console.log(userid.getAttribute("title"));
+
+        userid.abcd = "1234"
+        userid.title = "변경된 타이틀"
+        userid["title"] = "변경된 타이틀2"
+
+        userid.setAttribute("abcd", "1234");
+        
+        // userid.setAttribute("disabled", "disabled");
+        userid.setAttribute("disabled", ""); //가장 잘 쓰임
+        // userid.setAttribute("disabled", true);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        div, h3 {border: 2px solid; padding: 30px;}
+    </style>
+</head>
+<body>
+    <!--
+        이벤트 대상
+        이벤트 속성(이름)
+        이벤트 핸들러, 리스너
+    -->
+    <button type="button" data-href="https://www.naver.com">click me</button>
+    <div onclick="alert(1)">
+        <div  onclick="alert(2)">
+            <div  onclick="alert(3); event.stopPropagation()">
+                <h3  onclick="alert(4)">안녕하세요</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        // function fn() {
+        //     alert(10)
+        // }
+        //버튼에 이벤트 걸기
+        let btn = document.querySelector("button");
+        
+        // 이벤트 적용
+        // btn.onclick = function(e) {
+        //     alert(20)
+        // }
+        // btn.onclick = function(e) {
+        //     alert(30)
+        // }
+
+        // 표준 이벤트 적용 (standard event)
+        // btn.addEventListener("click", function(e) {
+        //     alert(40)
+        // })
+        btn.addEventListener("click", function(e) {
+            console.log(e);
+            console.log(event);
+
+            //a 태그의 기본 이벤트
+            location.href = this.dataset.href
+        })
+
+        // btn.addEventListener()
+
+        // event.preventDefault(); //기본 이벤트 제거
+        // event.stopPropagation() //이벤트 전파 금지
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='scope.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(function() {
+      $("a").click(function() {
+        return confirm(this.href + "로 이동하시겠습니까?")
+      })
+    })
+
+    function makeFunc() {
+        var name = "Mozilla"
+        function displayName() {
+            console.log(name);
+        }
+	    return displayName
+    }  
+
+    var ret = makeFunc()
+
+    //name 값이 잘 출력된다. 
+    //-> 지역 변수가 아직 살아있다는 것을 알 수 있음
+    ret() //전역 위치에서 지역변수를 알 수 있다.
+
+    // makeFunc()()
+
+    ((a, b) => console.log("hellow js", a, b))(10 ,20) //얘 왜 안나와
+
+    let arr = [1, 5, 4, 3, 2, 6, 7,]
+    //오름차순 람다식
+    // arr.sort((a, b) =>  a - b)
+    function compFn(a, b) {
+        //내림차순
+        return b - a
+    }
+    arr.sort(compFn)
+    console.log(arr)
+
+  </script>
+
+</head>
+<body>
+  <a href="https://www.google.com">구글</a>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #gameZone {width: 800px; height: 500px; border: 1px solid; margin: 0 auto; position: relative;}
+        #gameZone img {width: 50px; position: absolute; }
+    </style>    
+</head>
+
+<body>
+    <form name="frm">
+        <input name="userid" id="id" autofocus>
+        <input name="password" id="pw" type="password">
+        <button name="btnLogin">로그인</button>
+    </form>
+
+    <p id="result"></p>
+    <p id="result2"></p>
+    <hr>
+
+
+    <textarea id="t1"></textarea>
+    <br>
+    keyup <p id="result3"></p>
+    keydown <p id="result4"></p>
+    keypress <p id="result5"></p>
+    onchange <p id="result6"></p>
+
+
+    <hr>
+    <div id="gameZone">
+        <img id="player" src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+    </div>
+    <script>
+    let form = document.frm; //form태그에 name을 주면 이렇게 가져올 수 있음
+    frm.onsubmit = function() {
+        //기본 이벤트 제거
+        event.preventDefault();
+    }
+
+    let focusTarget = document.querySelectorAll("form > *")
+    focusTarget.forEach(function(item) {
+        item.onfocus = function() {
+            //여기서 this === item 같은거임
+            document.getElementById("result").innerHTML = this.name + " focused";
+        }
+        
+        //focus 탈출
+        item.onblur = function() {
+            document.getElementById("result2").innerHTML = this.name + " focused out";
+        }
+    })
+
+    let t1 = document.getElementById("t1")
+    t1.onkeyup = function() {
+        document.getElementById("result3").innerText = this.value.length
+    }
+    t1.onkeydown = function() {
+        document.getElementById("result4").innerText = this.value.length
+        
+    }
+    t1.onkeypress = function() {
+        document.getElementById("result5").innerText = this.value.length
+        
+    }
+    t1.onchange = function() {
+        document.getElementById("result6").innerText = this.value.length
+    }
+
+
+    // document.getElementById
+    let imgStyle = document.querySelector("#player").style;
+    imgStyle.left = "400px"
+    imgStyle.top = "250px"
+    window.onkeydown = function() {
+        console.log(imgStyle.left);
+        // console.log(event);
+        //left : 37 up: 38 right: 39 down: 40
+        switch(event.keyCode) {
+            case 37:
+                if(parseInt(imgStyle.left) > 0)
+                imgStyle.left = parseInt(imgStyle.left) - 5 + "px";
+                break;
+            case 38:
+                if(parseInt(imgStyle.top) > 0)
+                imgStyle.top = parseInt(imgStyle.top) - 5 + "px";
+                break;
+            case 39:
+                if(parseInt(imgStyle.left) < 800)
+                imgStyle.left = parseInt(imgStyle.left) + 5 + "px";
+                break;
+            case 40:
+                if(parseInt(imgStyle.top) < 500)
+                imgStyle.top = parseInt(imgStyle.top) +5 + "px";
+                break;
+        }
+    }
+</script>
+
+</body>
+</html>

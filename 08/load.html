@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .box {width: 100px; height: 100px; background-color: red; float: left; margin: 10px;}
+    </style>
+    <script>
+        // 아직 해당 태그를 읽지 않았기 때문에 제대로 된 값이 나오지 않는다.  
+        // dom 자체가 아직은 null인 상태. 
+        let h1 = document.getElementById("h1");
+        console.log(h1, 1);
+
+        //모든 작업이 로드가 완료된 이후에 실행됨.  가장 마지막에 출력.
+        window.onload = function() {
+            console.log(document.getElementById("h1"), 2);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="h1">Hellow java</h1>
+    <button id="btn">배경색 전환</button>
+    <hr>
+    <div class="box"></div>
+    <script>
+        let h2 = document.getElementById("h1");
+        console.log(h2, 3);
+
+        document.getElementById("btn").onclick = function() {
+          
+            if(document.body.style.backgroundColor === "skyblue") {
+                document.body.style.backgroundColor = "white"
+            } else {
+                document.body.style.backgroundColor = "skyblue"
+            }  
+        }
+
+        // let func = function() {
+        //     let box = document.querySelector(".box");
+        // document.querySelector(".box").onclick = function() {
+        //     //    document.body.innerHTML += '<div class="box"></div>'; //이거는 쓸 수 있을 정도로 좀...
+        //     let box = document.createElement("div"); //div 태그 만들기
+        //     box.setAttribute("class", "box"); //클래스명을 box로 주기
+        //     box.onclick = func; // 이벤트 붙이기
+        //     document.body.appendChild(box);
+        // }
+        // //innerHTML을 사용하면 문자열만을 제어하기 때문에 가지고 있던 이벤트를 제거해버림.
+        // document.querySelector(".box").onclick = func;
+        // }
+
+        //이벤트까지 "복제" 한다는 것을 의미하다.
+        document.querySelector(".box").onclick = function() {
+           //this == box를 의미.
+            document.body.appendChild(this.cloneNode(true));
+        }
+        
+    </script>
+</body>
+</html>
